@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sanat Crafts n Canvas</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+html { scroll-behavior: smooth; }
+.navbar-brand { animation: glow 2s infinite alternate; font-family: cursive; }
+@keyframes glow { from { color: palevioletred; } to { color:#705f87; } }
+#sanat { padding-top:60px; }
+#section1 { background:#f4dde9; padding:60px 0; }
+#intro h1 { font-size:52px; font-weight:800; text-transform:uppercase; }
+#intro a { margin-top:30px; background:#705f87; color:#fff; padding:12px 40px; border:none; font-weight:700; }
+.grid-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; margin-top:20px; }
+.grid-gallery img { width:100%; height:250px; object-fit:cover; border-radius:10px; transition:.4s; cursor:pointer; }
+.grid-gallery img:hover { transform:scale(1.05); }
+.filter-buttons .btn { background:#705f87; color:white; margin:4px; }
+#lightbox { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); display:none; justify-content:center; align-items:center; }
+#lightbox img { max-width:70%; border-radius:10px; }
+#contactResult { transition:0.6s ease; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#">Sanat_Crafts_n_Canvas</a>
+</div>
+<div class="collapse navbar-collapse" id="myNavbar">
+<ul class="nav navbar-nav">
+<li><a href="#section1">Home</a></li>
+<li><a href="#section2">About</a></li>
+<li><a href="#section3">Gallery</a></li>
+<li><a href="#section7">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- SECTION 1 -->
+<section id="section1">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<h1>Turning imagination<br>into canvas <span>Magic</span></h1>
+<p>Creativity brought alive with handcrafted artwork.</p>
+<a href="#section3" class="btn btn-lg">Explore Gallery</a>
+</div>
+<div class="col-md-6">
+<img class="img-responsive" src="https://momscolorfulmagic.com/cdn/shop/files/IMG_9256.jpg?v=1728000970&width=1946" />
+</div>
+</div>
+</div>
+</section>
+
+<!-- SECTION 3 GALLERY -->
+<section id="section3" class="odd" style="padding:40px; background:#f4dde9;">
+<div class="container">
+<h1 class="text-center">Gallery</h1>
+<div class="filter-buttons text-center">
+<button class="btn filter-btn" data-filter="all">All</button>
+<button class="btn filter-btn" data-filter="painting">Painting</button>
+<button class="btn filter-btn" data-filter="mandala">Mandala</button>
+<button class="btn filter-btn" data-filter="lippan">Lippan</button>
+<button class="btn filter-btn" data-filter="gift">Gifts</button>
+</div>
+
+<div class="grid-gallery">
+<div class="item painting"><img src="https://picsum.photos/300/300?1" onclick="openLightbox(this.src)"></div>
+<div class="item mandala"><img src="https://picsum.photos/300/300?2" onclick="openLightbox(this.src)"></div>
+<div class="item lippan"><img src="https://picsum.photos/300/300?3" onclick="openLightbox(this.src)"></div>
+<div class="item gift"><img src="https://picsum.photos/300/300?4" onclick="openLightbox(this.src)"></div>
+<div class="item painting"><img src="https://picsum.photos/300/300?5" onclick="openLightbox(this.src)"></div>
+<div class="item painting"><img src="https://picsum.photos/300/300?6" onclick="openLightbox(this.src)"></div>
+</div>
+</div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img" />
+</div>
+
+<!-- Contact -->
+<section id="section7" class="odd" style="padding:40px; background:white;">
+<div class="container">
+<h2>Contact</h2>
+<form id="contactForm">
+<input class="form-control" id="name" placeholder="Name" required><br>
+<input class="form-control" id="email" placeholder="Email" required><br>
+<textarea class="form-control" id="message" placeholder="Message" rows="4" required></textarea><br>
+<button type="button" class="btn" onclick="show()" style="background:#705f87; color:white;">Send</button>
+</form>
+<div id="contactResult" style="display:none; margin-top:10px;"></div>
+</div>
+</section>
+
+<script>
+function show(){
+let box=document.getElementById("contactResult");
+box.style.display='block';
+box.style.padding='10px';
+box.style.background='#e8ffe8';
+box.style.borderRadius='6px';
+box.style.boxShadow='0 4px 10px rgba(0,0,0,0.2)';
+box.innerHTML='Thanks! Your message was received.';
+document.getElementById('contactForm').reset();
+box.style.opacity='0';
+setTimeout(()=>{ box.style.opacity='1'; },50);
+}
+
+function openLightbox(src){
+document.getElementById('lightbox').style.display='flex';
+document.getElementById('lightbox-img').src=src;
+}
+function closeLightbox(){
+document.getElementById('lightbox').style.display='none';
+}
+
+const btns=document.querySelectorAll('.filter-btn');
+const items=document.querySelectorAll('.grid-gallery .item');
+
+btns.forEach(btn=>{
+btn.addEventListener('click',()=>{
+const f=btn.dataset.filter;
+items.forEach(item=>{
+if(f==='all' || item.classList.contains(f)) item.style.display='block';
+else item.style.display='none';
+});
+});
+});
+</script>
+
+</body>
+</html>

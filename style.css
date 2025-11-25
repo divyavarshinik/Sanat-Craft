@@ -1,0 +1,185 @@
+
+html{
+  scroll-behavior: smooth;
+}
+.navbar-brand {
+    animation: glow 2s infinite alternate;
+    font-family: cursive;
+}
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+}
+body, p, a, button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+@keyframes glow {
+    from { color: palevioletred; }
+    to { color: #705f87; }
+}
+
+#sanat{
+  padding-top: 51px;
+}
+#section1{
+   padding-bottom: 30px; min-height:750px;
+   background-color:rgb(244, 221, 233);
+}
+#intro{
+  top:50px;
+}
+#intro h1{
+  color: rgb(15, 15, 15);
+  font-size: 52px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+#intro p{
+  color: rgb(19, 19, 19);
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 400;
+}
+#intro h1 span{
+  color: #705f87;
+}
+#intro a{
+  margin-top: 50px;
+  padding: 12px 45px;
+  background-color: #705f87;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  border:none;
+  cursor: pointer;
+}
+.btn:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+#art{
+  width:100%;
+  max-height: 420px;
+  margin-top:20px ;
+  object-fit: cover;
+}
+img{transition:transform 0.4s ease}
+img:hover{transform:scale(1.03)}
+#section2{
+  background-color: white;
+  padding: 60px;
+  min-height:400px;
+}
+.odd{
+    background-color:rgb(244, 221, 233);
+    padding: 60px;
+    min-height:400px;
+}
+.even{
+  background-color: white;
+  padding: 60px;
+  min-height:400px;
+}
+.even h1{
+  margin-bottom:30px;
+  font-weight: 800;
+}
+.even p{
+  color:black;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.odd p{
+  color:rgb(13, 13, 13);
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.odd h1{
+  margin-bottom:30px;
+  font-weight: 800;
+  color: rgb(10, 10, 10);
+}
+#section2 a{
+  margin-top: 50px;
+  padding: 12px 45px;
+  background-color:  rgb(220, 147, 159);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  border:none;
+  cursor: pointer;
+}
+#section3{
+  background-color:rgb(244, 221, 233);
+ 
+}
+#myCarousel {
+    max-width: 500px;  /* optional: limits width */
+    margin: auto;
+}
+
+#myCarousel .item img {
+    height: 500px;       
+    width: 500px;
+    object-fit: cover;   
+    border-radius: 10px; 
+}
+
+.card{border-radius:10px;
+  overflow:hidden;
+  background-color:rgb(244, 221, 233) ;
+  padding:12px;
+  margin-bottom:18px;
+  transition:0.35s
+}
+.card:hover{transform:translateY(-8px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.12)
+}
+.card-img-top{width:100%;
+  height:240px;
+  object-fit:cover;
+  border-radius:8px
+}
+.card-body{padding:10px}
+.btn{background-color:#705f87 ;
+  color:#fff;
+  border-radius:6px;
+  border:none;
+  padding:8px 18px;
+  font-weight:700
+}
+.btn:hover{transform:scale(1.03)}
+
+.table th{
+  text-align: center;
+  background-color: white;
+}
+.table td{
+  text-align:center;
+  background-color: antiquewhite;
+}
+.box{border:3px dashed;
+   padding:15px;
+   background:whitesmoke;
+   width:100%;
+   max-width:320px
+}
+.box p{
+  color: #2b2b2b;
+}
+
+.review{
+  background:rgba(244, 197, 239, 0.95);
+  padding:18px;
+  border-radius:10px;
+  margin-top: 10px;
+}
+footer{
+  background:#2b2b2b;
+  color:#fff;
+  padding:30px 0}
+
+
